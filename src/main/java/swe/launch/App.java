@@ -16,14 +16,14 @@ public class App extends Application {
     private TestController testController;
 
     private void loadFXML() {
-        URL testURL = Objects.requireNonNull(App.class.getClassLoader().getResource("swe/views/test.fxml"));
+        URL testURL = Objects.requireNonNull(App.class.getClassLoader().getResource("swe/views/root.fxml"));
         FXMLLoader loader1 = new FXMLLoader(testURL);
         try {
             test = loader1.load();
             testController = loader1.getController();
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Failed to load test.fxml");
+            System.err.println("Failed to load root.fxml");
         }
     }
 

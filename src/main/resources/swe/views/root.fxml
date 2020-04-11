@@ -23,7 +23,7 @@
 
 
     <center>
-        <Label text="Hello world!"/>
+        <fx:include source="login.fxml"/>
     </center>
 
 </BorderPane>

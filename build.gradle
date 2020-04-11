@@ -7,7 +7,7 @@ plugins {
 group 'swe.class'
 version '0.1'
 
-sourceCompatibility = 1.13
+sourceCompatibility = 1.12
 mainClassName = "$moduleName/swe.launch.App"
 
 repositories {
