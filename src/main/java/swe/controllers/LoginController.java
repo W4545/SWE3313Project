@@ -1,7 +1,6 @@
 package swe.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import swe.launch.App;
