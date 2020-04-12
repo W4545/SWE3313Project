@@ -23,11 +23,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField prefHeight="25.0" prefWidth="199.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
             <Label text="Username" GridPane.halignment="LEFT" />
+            <TextField prefHeight="25.0" prefWidth="199.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
             <Label text="Password" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="Submit" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
             <PasswordField GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Submit" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
             <!-- <a href="https://www.freepik.com/free-photos-vectors/logo">Logo vector created by freepik - www.freepik.com</a> !-->
          </children>
       </GridPane>
