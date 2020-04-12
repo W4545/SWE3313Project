@@ -6,4 +6,5 @@ module SWEProject.main {
     opens swe.controllers to javafx.fxml;
 
     exports swe.launch;
+    exports swe.controllers;
 }

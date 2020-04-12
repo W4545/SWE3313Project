@@ -8,8 +8,8 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="swe.controllers.TestController"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="swe.controllers.RootController"
+            prefHeight="400.0" prefWidth="600.0" fx:id="rootPane">
     <top>
         <MenuBar fx:id="menuBar">
             <Menu text="Mode">
@@ -21,9 +21,5 @@
         </MenuBar>
     </top>
 
-
-    <center>
-        <fx:include source="existingCustomer.fxml"/>
-    </center>
 
 </BorderPane>
