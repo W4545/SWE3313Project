@@ -15,7 +15,7 @@
    </rowConstraints>
    <children>
       <Label alignment="TOP_LEFT" text="Order(s):" />
-      <VBox prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1" />
+      <VBox prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1" fx:id="vBox"/>
       <Label text="Total: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
    </children>
 </GridPane>

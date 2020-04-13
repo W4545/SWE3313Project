@@ -27,6 +27,12 @@ public class App extends Application {
     private Parent existingCustomer;
     private ExistingCustomerController existingCustomerController;
 
+    private Parent orderScreen1;
+    private OrderScreen1Controller orderScreen1Controller;
+
+    private Parent orderScreen2;
+    private OrderScreen2Controller orderScreen2Controller;
+
     private void loadFXML() {
         URL rootURL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/root.fxml"));
@@ -38,12 +44,18 @@ public class App extends Application {
                 App.class.getClassLoader().getResource("swe/views/orderScreen.fxml"));
         URL existingCustomerURL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/existingCustomer.fxml"));
+        URL orderScreen1URL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/orderScreen1.fxml"));
+        URL orderScreen2URL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/orderScreen2.fxml"));
 
         FXMLLoader rootLoader = new FXMLLoader(rootURL);
         FXMLLoader loginLoader = new FXMLLoader(loginURL);
         FXMLLoader newCustomerLoader = new FXMLLoader(newCustomerURL);
         FXMLLoader orderScreenLoader = new FXMLLoader(orderScreenURL);
         FXMLLoader existingCustomerLoader = new FXMLLoader(existingCustomerURL);
+        FXMLLoader orderScreen1Loader = new FXMLLoader(orderScreen1URL);
+        FXMLLoader orderScreen2Loader = new FXMLLoader(orderScreen2URL);
 
         try {
             root = rootLoader.load();
@@ -56,6 +68,10 @@ public class App extends Application {
             orderScreenController = orderScreenLoader.getController();
             existingCustomer = existingCustomerLoader.load();
             existingCustomerController = existingCustomerLoader.getController();
+            orderScreen1 = orderScreen1Loader.load();
+            orderScreen1Controller = orderScreen1Loader.getController();
+            orderScreen2 = orderScreen2Loader.load();
+            orderScreen2Controller = orderScreen2Loader.getController();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,6 +85,8 @@ public class App extends Application {
         newCustomerController.setApp(this);
         orderScreenController.setApp(this);
         existingCustomerController.setApp(this);
+        orderScreen1Controller.setApp(this);
+        orderScreen2Controller.setApp(this);
     }
 
     @Override
@@ -76,12 +94,14 @@ public class App extends Application {
         loadFXML();
         initControllers();
 
+        orderScreenController.setRight(orderScreen1);
+
         Scene scene = new Scene(root);
         rootController.setPrimaryStage(primaryStage);
         rootController.setCenter(login);
 
         primaryStage.setScene(scene);
-        primaryStage.setFullScreen(true);
+        // primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("Debugging: Press Esc to exit fullscreen");
 
         primaryStage.show();
@@ -129,5 +149,21 @@ public class App extends Application {
 
     public ExistingCustomerController getExistingCustomerController() {
         return existingCustomerController;
+    }
+
+    public Parent getOrderScreen1() {
+        return orderScreen1;
+    }
+
+    public OrderScreen1Controller getOrderScreen1Controller() {
+        return orderScreen1Controller;
+    }
+
+    public Parent getOrderScreen2() {
+        return orderScreen2;
+    }
+
+    public OrderScreen2Controller getOrderScreen2Controller() {
+        return orderScreen2Controller;
     }
 }

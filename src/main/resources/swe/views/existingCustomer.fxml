@@ -27,6 +27,7 @@
             <TableColumn prefWidth="134.0" text="Payment Method" />
         </columns>
       </TableView>
-      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER"
+              GridPane.rowIndex="4" onAction="#confirmButton"/>
    </children>
 </GridPane>

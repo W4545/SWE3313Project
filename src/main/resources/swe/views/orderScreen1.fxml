@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swe.controllers.OrderScreen1Controller">
+   <fx:define>
+      <ToggleGroup fx:id="crustToggleGroup" />
+      <ToggleGroup fx:id="sizeToggleGroup"/>
+      <ToggleGroup fx:id="sauceToggleGroup"/>
+      <ToggleGroup fx:id="drinkToggleGroup"/>
+   </fx:define>
+   <rowConstraints>
+      <RowConstraints maxHeight="50.0" minHeight="10.0" percentHeight="7.0" prefHeight="28.0" />
+      <RowConstraints maxHeight="127.0" minHeight="10.0" percentHeight="30.0" prefHeight="91.0" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" percentHeight="5.0" prefHeight="49.0" />
+      <RowConstraints maxHeight="97.0" minHeight="0.0" percentHeight="7.0" prefHeight="97.0" />
+      <RowConstraints maxHeight="25.0" minHeight="0.0" percentHeight="30.0" prefHeight="17.0" />
+      <RowConstraints maxHeight="25.0" minHeight="10.0" percentHeight="30.0" prefHeight="30.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+   </columnConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Crust" />
+            <RadioButton mnemonicParsing="false" text="Hand Tossed" toggleGroup="$crustToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Thin Crust" toggleGroup="$crustToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Deep Dish" toggleGroup="$crustToggleGroup"/>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label text="Size" />
+            <RadioButton mnemonicParsing="false" text="Small" toggleGroup="$sizeToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Medium" toggleGroup="$sizeToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Large" toggleGroup="$sizeToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="X-Large" toggleGroup="$sizeToggleGroup"/>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <Label text="Sauce" />
+            <RadioButton mnemonicParsing="false" text="Marinara" toggleGroup="$sauceToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="White" toggleGroup="$sauceToggleGroup"/>
+         </children>
+      </VBox>
+      <Label text="Pizza" />
+      <Label text="Other Options" GridPane.rowIndex="3" />
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+         <children>
+            <Label text="Other Items" />
+            <CheckBox mnemonicParsing="false" text="S Fountain Drink" />
+            <CheckBox mnemonicParsing="false" text="M Fountain Drink" />
+            <CheckBox mnemonicParsing="false" text="L Fountain Drink" />
+            <CheckBox mnemonicParsing="false" text="Cookie" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <Label text="Drink Options" />
+            <RadioButton mnemonicParsing="false" text="Coca Cola" toggleGroup="$drinkToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Water" toggleGroup="$drinkToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Sprite" toggleGroup="$drinkToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Fanta Orange" toggleGroup="$drinkToggleGroup"/>
+            <RadioButton mnemonicParsing="false" text="Diet Coke" toggleGroup="$drinkToggleGroup"/>
+         </children>
+      </VBox>
+      <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" text="Next" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="TOP" onAction="#nextButton">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin></Button>
+   </children>
+</GridPane>

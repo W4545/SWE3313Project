@@ -30,6 +30,12 @@ public class NewCustomerController {
 		app.getRootController().setCenter(app.getExistingCustomer());
 	}
 
+	@FXML
+	private void newCustomerButton() {
+		clear();
+		app.getRootController().setCenter(app.getOrderScreen());
+	}
+
 	public void clear() {
 		customerAddress.clear();
 		customerName.clear();
