@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import swe.controllers.*;
 
@@ -39,6 +40,12 @@ public class App extends Application {
     private Parent creditDebitScreen;
     private CreditDebitScreenController creditDebitScreenController;
 
+    private Parent endCheckoutScreen;
+    private EndCheckoutScreenController endCheckoutScreenController;
+
+    private Parent receiptPreview;
+    private ReceiptPreviewController receiptPreviewController;
+
     private void loadFXML() {
         URL rootURL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/root.fxml"));
@@ -58,6 +65,10 @@ public class App extends Application {
                 App.class.getClassLoader().getResource("swe/views/orderScreen3.fxml"));
         URL creditDebitScreenURL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/creditDebitScreen.fxml"));
+        URL endCheckoutScreenURL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/endCheckoutScreen.fxml"));
+        URL receiptPreviewURL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/receiptPreview.fxml"));
 
         FXMLLoader loaderRoot = new FXMLLoader(rootURL);
         FXMLLoader loaderLogin = new FXMLLoader(loginURL);
@@ -68,6 +79,8 @@ public class App extends Application {
         FXMLLoader loaderOrderScreen2 = new FXMLLoader(orderScreen2URL);
         FXMLLoader loaderOrderScreen3 = new FXMLLoader(orderScreen3URL);
         FXMLLoader loaderCreditDebitScreen = new FXMLLoader(creditDebitScreenURL);
+        FXMLLoader loaderEndCheckoutScreen = new FXMLLoader(endCheckoutScreenURL);
+        FXMLLoader loaderReceiptPreview = new FXMLLoader(receiptPreviewURL);
 
         try {
             root = loaderRoot.load();
@@ -88,6 +101,10 @@ public class App extends Application {
             orderScreen3Controller = loaderOrderScreen3.getController();
             creditDebitScreen = loaderCreditDebitScreen.load();
             creditDebitScreenController = loaderCreditDebitScreen.getController();
+            endCheckoutScreen = loaderEndCheckoutScreen.load();
+            endCheckoutScreenController = loaderEndCheckoutScreen.getController();
+            receiptPreview = loaderReceiptPreview.load();
+            receiptPreviewController = loaderReceiptPreview.getController();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -105,6 +122,7 @@ public class App extends Application {
         orderScreen2Controller.setApp(this);
         orderScreen3Controller.setApp(this);
         creditDebitScreenController.setApp(this);
+        endCheckoutScreenController.setApp(this);
     }
 
     @Override
@@ -112,7 +130,9 @@ public class App extends Application {
         loadFXML();
         initControllers();
 
+        orderScreenController.setRight(receiptPreview);
         orderScreenController.setRight(orderScreen1);
+        endCheckoutScreenController.setReceiptPreview(receiptPreview);
 
         Scene scene = new Scene(root);
         rootController.setPrimaryStage(primaryStage);
@@ -121,6 +141,8 @@ public class App extends Application {
         primaryStage.setScene(scene);
         // primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("Debugging: Press Esc to exit fullscreen");
+        primaryStage.setTitle("Pizza App");
+        primaryStage.getIcons().add(new Image("swe/images/logo.png"));
 
         primaryStage.show();
     }
@@ -199,5 +221,21 @@ public class App extends Application {
 
     public CreditDebitScreenController getCreditDebitScreenController() {
         return creditDebitScreenController;
+    }
+
+    public Parent getEndCheckoutScreen() {
+        return endCheckoutScreen;
+    }
+
+    public EndCheckoutScreenController getEndCheckoutScreenController() {
+        return endCheckoutScreenController;
+    }
+
+    public Parent getReceiptPreview() {
+        return receiptPreview;
+    }
+
+    public ReceiptPreviewController getReceiptPreviewController() {
+        return receiptPreviewController;
     }
 }

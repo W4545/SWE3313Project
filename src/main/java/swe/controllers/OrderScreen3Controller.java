@@ -23,6 +23,12 @@ public class OrderScreen3Controller implements Initializable {
         app.getOrderScreenController().setRight(app.getCreditDebitScreen());
     }
 
+    @FXML
+    private void cash() {
+        app.getEndCheckoutScreenController().setReceiptPreview(app.getReceiptPreview());
+        app.getRootController().setCenter(app.getEndCheckoutScreen());
+    }
+
 
     public void setApp(App app) {
         this.app = app;

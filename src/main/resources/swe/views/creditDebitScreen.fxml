@@ -35,6 +35,6 @@
             <TextField prefHeight="25.0" prefWidth="60.0" />
          </children>
       </HBox>
-      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" onAction="#confirm"/>
    </children>
 </GridPane>
