@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 
 <GridPane alignment="CENTER" hgap="5.0" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swe.controllers.ExistingCustomerController">
@@ -8,7 +10,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" percentHeight="40.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
    </rowConstraints>
    <columnConstraints>
@@ -19,15 +21,30 @@
       <Label text="Phone Number" />
       <TextField GridPane.columnSpan="2" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" text="Search" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <TableView prefHeight="122.0" prefWidth="305.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+      <TableView fx:id="table" prefHeight="122.0" prefWidth="305.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
         <columns>
-          <TableColumn prefWidth="75.0" text="Customer #" />
-          <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="Address" />
-            <TableColumn prefWidth="134.0" text="Payment Method" />
+          <TableColumn prefWidth="75.0" text="Customer #">
+              <cellValueFactory>
+                  <PropertyValueFactory property="customerID" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="75.0" text="Name">
+              <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="75.0" text="Address">
+              <cellValueFactory>
+                  <PropertyValueFactory property="address" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="134.0" text="Payment Method">
+              <cellValueFactory>
+                  <PropertyValueFactory property="paymentMethod" />
+              </cellValueFactory>
+          </TableColumn>
         </columns>
       </TableView>
-      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER"
-              GridPane.rowIndex="4" onAction="#confirmButton"/>
+      <Button mnemonicParsing="false" onAction="#confirmButton" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
    </children>
 </GridPane>

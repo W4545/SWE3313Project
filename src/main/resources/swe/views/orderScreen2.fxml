@@ -9,13 +9,13 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
    </rowConstraints>
    <columnConstraints>
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
       <ColumnConstraints minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
    </columnConstraints>
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Label text="Meats" />
+            <Label text="Meats ($0.20 each)" />
             <CheckBox mnemonicParsing="false" text="Pepperoni" />
             <CheckBox mnemonicParsing="false" text="Sausage" />
             <CheckBox mnemonicParsing="false" text="Beef" />
@@ -26,7 +26,7 @@
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
          <children>
-            <Label text="Veggies" />
+            <Label text="Veggies ($0.20 each)" />
             <CheckBox mnemonicParsing="false" text="Onions" />
             <CheckBox mnemonicParsing="false" text="Peppers" />
             <CheckBox mnemonicParsing="false" text="Mushrooms" />
@@ -35,8 +35,7 @@
             <CheckBox mnemonicParsing="false" text="Banana Peppers" />
          </children>
       </VBox>
-      <Button mnemonicParsing="false" text="Back" GridPane.rowIndex="1" onAction="#backButton"/>
-      <Button mnemonicParsing="false" text="Confirm" GridPane.columnIndex="1"
-              GridPane.halignment="RIGHT" GridPane.rowIndex="1" onAction="#confirmButton"/>
+      <Button mnemonicParsing="false" onAction="#backButton" text="Back" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#confirmButton" text="Confirm" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
    </children>
 </GridPane>
