@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.lang.Boolean?>
 <GridPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swe.controllers.OrderScreen1Controller">
    <fx:define>
       <ToggleGroup fx:id="crustToggleGroup" />
@@ -54,13 +55,13 @@
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
          <children>
             <Label text="Other Items" />
-            <CheckBox mnemonicParsing="false" text="S Fountain Drink" />
-            <CheckBox mnemonicParsing="false" text="M Fountain Drink" />
-            <CheckBox mnemonicParsing="false" text="L Fountain Drink" />
+            <CheckBox mnemonicParsing="false" text="S Fountain Drink" onAction="#small" fx:id="smallCheckBox"/>
+            <CheckBox mnemonicParsing="false" text="M Fountain Drink" onAction="#medium" fx:id="mediumCheckBox"/>
+            <CheckBox mnemonicParsing="false" text="L Fountain Drink" onAction="#large" fx:id="largeCheckBox"/>
             <CheckBox mnemonicParsing="false" text="Cookie" />
          </children>
       </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="drinkBox">
          <children>
             <Label text="Drink Options" />
             <RadioButton mnemonicParsing="false" text="Coca Cola" toggleGroup="$drinkToggleGroup"/>
