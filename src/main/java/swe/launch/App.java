@@ -33,6 +33,12 @@ public class App extends Application {
     private Parent orderScreen2;
     private OrderScreen2Controller orderScreen2Controller;
 
+    private Parent orderScreen3;
+    private OrderScreen3Controller orderScreen3Controller;
+
+    private Parent creditDebitScreen;
+    private CreditDebitScreenController creditDebitScreenController;
+
     private void loadFXML() {
         URL rootURL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/root.fxml"));
@@ -48,30 +54,40 @@ public class App extends Application {
                 App.class.getClassLoader().getResource("swe/views/orderScreen1.fxml"));
         URL orderScreen2URL = Objects.requireNonNull(
                 App.class.getClassLoader().getResource("swe/views/orderScreen2.fxml"));
+        URL orderScreen3URL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/orderScreen3.fxml"));
+        URL creditDebitScreenURL = Objects.requireNonNull(
+                App.class.getClassLoader().getResource("swe/views/creditDebitScreen.fxml"));
 
-        FXMLLoader rootLoader = new FXMLLoader(rootURL);
-        FXMLLoader loginLoader = new FXMLLoader(loginURL);
-        FXMLLoader newCustomerLoader = new FXMLLoader(newCustomerURL);
-        FXMLLoader orderScreenLoader = new FXMLLoader(orderScreenURL);
-        FXMLLoader existingCustomerLoader = new FXMLLoader(existingCustomerURL);
-        FXMLLoader orderScreen1Loader = new FXMLLoader(orderScreen1URL);
-        FXMLLoader orderScreen2Loader = new FXMLLoader(orderScreen2URL);
+        FXMLLoader loaderRoot = new FXMLLoader(rootURL);
+        FXMLLoader loaderLogin = new FXMLLoader(loginURL);
+        FXMLLoader loaderNewCustomer = new FXMLLoader(newCustomerURL);
+        FXMLLoader LoaderOrderScreen = new FXMLLoader(orderScreenURL);
+        FXMLLoader LoaderExistingCustomer = new FXMLLoader(existingCustomerURL);
+        FXMLLoader loaderOrderScreen1 = new FXMLLoader(orderScreen1URL);
+        FXMLLoader loaderOrderScreen2 = new FXMLLoader(orderScreen2URL);
+        FXMLLoader loaderOrderScreen3 = new FXMLLoader(orderScreen3URL);
+        FXMLLoader loaderCreditDebitScreen = new FXMLLoader(creditDebitScreenURL);
 
         try {
-            root = rootLoader.load();
-            rootController = rootLoader.getController();
-            login = loginLoader.load();
-            loginController = loginLoader.getController();
-            newCustomer = newCustomerLoader.load();
-            newCustomerController = newCustomerLoader.getController();
-            orderScreen = orderScreenLoader.load();
-            orderScreenController = orderScreenLoader.getController();
-            existingCustomer = existingCustomerLoader.load();
-            existingCustomerController = existingCustomerLoader.getController();
-            orderScreen1 = orderScreen1Loader.load();
-            orderScreen1Controller = orderScreen1Loader.getController();
-            orderScreen2 = orderScreen2Loader.load();
-            orderScreen2Controller = orderScreen2Loader.getController();
+            root = loaderRoot.load();
+            rootController = loaderRoot.getController();
+            login = loaderLogin.load();
+            loginController = loaderLogin.getController();
+            newCustomer = loaderNewCustomer.load();
+            newCustomerController = loaderNewCustomer.getController();
+            orderScreen = LoaderOrderScreen.load();
+            orderScreenController = LoaderOrderScreen.getController();
+            existingCustomer = LoaderExistingCustomer.load();
+            existingCustomerController = LoaderExistingCustomer.getController();
+            orderScreen1 = loaderOrderScreen1.load();
+            orderScreen1Controller = loaderOrderScreen1.getController();
+            orderScreen2 = loaderOrderScreen2.load();
+            orderScreen2Controller = loaderOrderScreen2.getController();
+            orderScreen3 = loaderOrderScreen3.load();
+            orderScreen3Controller = loaderOrderScreen3.getController();
+            creditDebitScreen = loaderCreditDebitScreen.load();
+            creditDebitScreenController = loaderCreditDebitScreen.getController();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,6 +103,8 @@ public class App extends Application {
         existingCustomerController.setApp(this);
         orderScreen1Controller.setApp(this);
         orderScreen2Controller.setApp(this);
+        orderScreen3Controller.setApp(this);
+        creditDebitScreenController.setApp(this);
     }
 
     @Override
@@ -165,5 +183,21 @@ public class App extends Application {
 
     public OrderScreen2Controller getOrderScreen2Controller() {
         return orderScreen2Controller;
+    }
+
+    public Parent getOrderScreen3() {
+        return orderScreen3;
+    }
+
+    public OrderScreen3Controller getOrderScreen3Controller() {
+        return orderScreen3Controller;
+    }
+
+    public Parent getCreditDebitScreen() {
+        return creditDebitScreen;
+    }
+
+    public CreditDebitScreenController getCreditDebitScreenController() {
+        return creditDebitScreenController;
     }
 }

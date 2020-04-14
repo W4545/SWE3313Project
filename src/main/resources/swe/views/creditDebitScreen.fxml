@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swe.controllers.CreditDebitScreenController">
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <children>
+      <Label text="Card Number" />
+      <TextField GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField GridPane.columnSpan="2" GridPane.rowIndex="3" />
+      <Label text="Security Code" GridPane.rowIndex="2" />
+      <Label text="Expiration Date" GridPane.rowIndex="4" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+         <children>
+            <Label alignment="CENTER" text="M:" />
+            <TextField prefHeight="25.0" prefWidth="60.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <Label text="D:" />
+            <TextField prefHeight="25.0" prefWidth="60.0" />
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" text="Confirm" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+   </children>
+</GridPane>

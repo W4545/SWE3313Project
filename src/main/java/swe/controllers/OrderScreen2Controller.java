@@ -21,6 +21,6 @@ public class OrderScreen2Controller {
 
 	@FXML
 	private void confirmButton() {
-
+		app.getOrderScreenController().setRight(app.getOrderScreen3());
 	}
 }
