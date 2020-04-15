@@ -3,11 +3,6 @@ package swe.controllers;
 // Name: Jack Young
 // Date: 4/12/2020
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -16,7 +11,6 @@ import swe.launch.App;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Consumer;
 
 public class OrderScreenController implements Initializable {
 

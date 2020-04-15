@@ -3,8 +3,6 @@ package swe.fabrications;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.util.PropertyPermission;
-
 public class Person {
     private SimpleStringProperty customerID = new SimpleStringProperty("");
     private SimpleStringProperty name = new SimpleStringProperty("");
