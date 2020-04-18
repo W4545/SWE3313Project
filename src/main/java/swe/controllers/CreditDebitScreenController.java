@@ -15,8 +15,8 @@ public class CreditDebitScreenController {
 
     @FXML
     private void confirm() {
-        app.getEndCheckoutScreenController().setReceiptPreview(app.getReceiptPreview());
-        app.getRootController().setCenter(app.getEndCheckoutScreen());
+        app.getViews().getEndCheckoutScreenController().setReceiptPreview(app.getViews().getReceiptPreview());
+        app.getViews().getRootController().setCenter(app.getViews().getEndCheckoutScreen());
     }
 
     public void setApp(App app) {

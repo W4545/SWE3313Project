@@ -16,11 +16,11 @@ public class OrderScreen2Controller {
 
 	@FXML
 	private void backButton() {
-		app.getOrderScreenController().setRight(app.getOrderScreen1());
+		app.getViews().getOrderScreenController().setRight(app.getViews().getOrderScreen1());
 	}
 
 	@FXML
 	private void confirmButton() {
-		app.getOrderScreenController().setRight(app.getOrderScreen3());
+		app.getViews().getOrderScreenController().setRight(app.getViews().getOrderScreen3());
 	}
 }

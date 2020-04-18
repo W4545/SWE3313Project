@@ -26,13 +26,13 @@ public class NewCustomerController {
 	@FXML
 	private void existingCustomerButton() {
 		clear();
-		app.getRootController().setCenter(app.getExistingCustomer());
+		app.getViews().getRootController().setCenter(app.getViews().getExistingCustomer());
 	}
 
 	@FXML
 	private void newCustomerButton() {
 		clear();
-		app.getRootController().setCenter(app.getOrderScreen());
+		app.getViews().getRootController().setCenter(app.getViews().getOrderScreen());
 	}
 
 	public void clear() {

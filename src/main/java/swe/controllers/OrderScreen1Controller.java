@@ -86,7 +86,7 @@ public class OrderScreen1Controller implements Initializable {
 
 	@FXML
 	private void nextButton() {
-		app.getOrderScreenController().setRight(app.getOrderScreen2());
+		app.getViews().getOrderScreenController().setRight(app.getViews().getOrderScreen2());
 	}
 
 	@Override

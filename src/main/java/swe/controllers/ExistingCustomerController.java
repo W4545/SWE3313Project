@@ -20,7 +20,7 @@ public class ExistingCustomerController implements Initializable {
 
 	@FXML
 	private void confirmButton() {
-		app.getRootController().setCenter(app.getOrderScreen());
+		app.getViews().getRootController().setCenter(app.getViews().getOrderScreen());
 	}
 
 	public void setApp(App app) {
