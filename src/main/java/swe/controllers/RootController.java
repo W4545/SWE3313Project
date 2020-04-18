@@ -1,14 +1,22 @@
 package swe.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import swe.fabrications.Person;
 import swe.launch.App;
 
-public class RootController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class RootController implements Initializable {
 
     @FXML
     private MenuBar menuBar;
@@ -22,6 +30,8 @@ public class RootController {
     private Stage primaryStage;
 
     private App app;
+
+    private ObservableList<Person> customers;
 
     @FXML
     private void exit() {
@@ -40,4 +50,15 @@ public class RootController {
         this.app = app;
     }
 
+    public ObservableList<Person> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Person> list) {
+        customers = FXCollections.observableList(list);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 }

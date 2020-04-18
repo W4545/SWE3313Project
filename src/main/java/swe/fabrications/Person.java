@@ -67,4 +67,9 @@ public class Person {
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod.set(paymentMethod);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s&AS&%s&AS&%s&AS&%s", customerID.get(), name.get(), address.get(), paymentMethod.get());
+    }
 }

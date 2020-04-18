@@ -9,4 +9,5 @@ module SWEProject.main {
 
     exports swe.launch;
     exports swe.controllers;
+    exports swe.fabrications;
 }
