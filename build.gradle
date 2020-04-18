@@ -2,12 +2,13 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version "0.0.8"
+    id 'org.beryx.jlink' version '2.17.7'
 }
 
 group 'swe.class'
 version '0.1'
 
-sourceCompatibility = 1.12
+sourceCompatibility = 1.14
 mainClassName = "$moduleName/swe.launch.App"
 
 repositories {
@@ -19,5 +20,19 @@ dependencies {
 }
 
 javafx {
+    version = '14'
     modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+jlink {
+    options = ['--compress', '2']
+    launcher{
+        name = 'boot'
+    }
+
+    jpackage {
+        skipInstaller = true
+        imageName = "PizzaApp"
+        imageOptions = ['--icon', 'src/resources/swe/images/logo.ico']
+    }
 }

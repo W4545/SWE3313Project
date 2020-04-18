@@ -5,6 +5,7 @@ package swe.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import swe.fabrications.Person;
 import swe.launch.App;
 
 public class NewCustomerController {
@@ -31,6 +32,10 @@ public class NewCustomerController {
 
 	@FXML
 	private void newCustomerButton() {
+		Person person = new Person(customerPhoneNumber.getText(), customerName.getText(),
+				customerAddress.getText(), customerPaymentMethod.getText());
+		app.getCustomers().add(person);
+		app.getViews().getReceiptPreviewController().setCustomer(person);
 		clear();
 		app.getViews().getRootController().setCenter(app.getViews().getOrderScreen());
 	}

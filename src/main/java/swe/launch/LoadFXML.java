@@ -52,28 +52,66 @@ public class LoadFXML {
 	}
 
 	void loadFXML() {
-		URL rootURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/root.fxml"));
-		URL loginURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/login.fxml"));
-		URL newCustomerURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/newCustomer.fxml"));
-		URL orderScreenURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/orderScreen.fxml"));
-		URL existingCustomerURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/existingCustomer.fxml"));
-		URL orderScreen1URL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/orderScreen1.fxml"));
-		URL orderScreen2URL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/orderScreen2.fxml"));
-		URL orderScreen3URL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/orderScreen3.fxml"));
-		URL creditDebitScreenURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/creditDebitScreen.fxml"));
-		URL endCheckoutScreenURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/endCheckoutScreen.fxml"));
-		URL receiptPreviewURL = Objects.requireNonNull(
-				App.class.getClassLoader().getResource("swe/views/receiptPreview.fxml"));
+		URL rootURL;
+		URL loginURL;
+		URL newCustomerURL;
+		URL orderScreenURL;
+		URL existingCustomerURL;
+		URL orderScreen1URL;
+		URL orderScreen2URL;
+		URL orderScreen3URL;
+		URL creditDebitScreenURL;
+		URL endCheckoutScreenURL;
+		URL receiptPreviewURL;
+
+		try {
+			rootURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/root.fxml"));
+			loginURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/login.fxml"));
+			newCustomerURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/newCustomer.fxml"));
+			orderScreenURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/orderScreen.fxml"));
+			existingCustomerURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/existingCustomer.fxml"));
+			orderScreen1URL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/orderScreen1.fxml"));
+			orderScreen2URL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/orderScreen2.fxml"));
+			orderScreen3URL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/orderScreen3.fxml"));
+			creditDebitScreenURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/creditDebitScreen.fxml"));
+			endCheckoutScreenURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/endCheckoutScreen.fxml"));
+			receiptPreviewURL = Objects.requireNonNull(
+					App.class.getClassLoader().getResource("swe/views/receiptPreview.fxml"));
+		} catch (NullPointerException ex) {
+			rootURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/root.fxml"));
+			loginURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/login.fxml"));
+			newCustomerURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/newCustomer.fxml"));
+			orderScreenURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/orderScreen.fxml"));
+			existingCustomerURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/existingCustomer.fxml"));
+			orderScreen1URL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/orderScreen1.fxml"));
+			orderScreen2URL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/orderScreen2.fxml"));
+			orderScreen3URL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/orderScreen3.fxml"));
+			creditDebitScreenURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/creditDebitScreen.fxml"));
+			endCheckoutScreenURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/endCheckoutScreen.fxml"));
+			receiptPreviewURL = Objects.requireNonNull(
+					App.class.getResource("/swe/views/receiptPreview.fxml"));
+		}
+
 
 		FXMLLoader loaderRoot = new FXMLLoader(rootURL);
 		FXMLLoader loaderLogin = new FXMLLoader(loginURL);
@@ -90,6 +128,7 @@ public class LoadFXML {
 		try {
 			root = loaderRoot.load();
 			rootController = loaderRoot.getController();
+			rootController.setApp(app);
 			login = loaderLogin.load();
 			loginController = loaderLogin.getController();
 			newCustomer = loaderNewCustomer.load();
@@ -118,7 +157,6 @@ public class LoadFXML {
 	}
 
 	void initControllers() {
-		rootController.setApp(app);
 		loginController.setApp(app);
 		newCustomerController.setApp(app);
 		orderScreenController.setApp(app);

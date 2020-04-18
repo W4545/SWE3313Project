@@ -40,9 +40,7 @@ public class OrderScreen1Controller implements Initializable {
 
 	private final Property<Boolean> disableMedium = new SimpleBooleanProperty(false);
 
-	private Property<Boolean> disableLarge = new SimpleBooleanProperty(false);
-
-	private char selectedSize;
+	private final Property<Boolean> disableLarge = new SimpleBooleanProperty(false);
 
 	public void setApp(App app) {
 		this.app = app;

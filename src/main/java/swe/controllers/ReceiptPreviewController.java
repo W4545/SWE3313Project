@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import swe.fabrications.Person;
 import swe.launch.App;
 
 import java.net.URL;
@@ -15,14 +16,27 @@ import java.util.ResourceBundle;
 public class ReceiptPreviewController implements Initializable {
 	private App app;
 
+	private Person customer;
+
 	@FXML
 	private VBox vBox;
 
 	@FXML
 	private Label total;
 
+	@FXML
+	private Label orderTitle;
+
 	public void setApp(App app) {
 		this.app = app;
+	}
+
+	public void setCustomer(Person person) {
+		customer = person;
+		if (customer == null)
+			orderTitle.setText("Order(s):");
+		else
+			orderTitle.setText(String.format("Order(s) for %s: ", person.getName()));
 	}
 
 	@Override
