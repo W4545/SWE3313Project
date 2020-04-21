@@ -16,7 +16,6 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 javafx {
@@ -25,7 +24,7 @@ javafx {
 }
 
 jlink {
-    options = ['--compress', '2']
+    options = ['--compress', '2', '--strip-debug', '--no-man-pages', '--no-header-files']
     launcher{
         name = 'boot'
     }
