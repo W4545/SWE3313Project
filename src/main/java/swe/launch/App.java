@@ -1,6 +1,8 @@
 package swe.launch;
 
 import javafx.application.Application;
+import javafx.beans.property.Property;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -22,6 +24,7 @@ public class App extends Application {
 
     private PizzaView currentPizza;
     private ItemView currentItem;
+    private SimpleBooleanProperty loggedIn;
 
     public static final boolean DEV_MODE = true;
     public static final double TAX = .06;
@@ -29,13 +32,14 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        loggedIn = new SimpleBooleanProperty(false);
         loadCustomers();
         loadFXML = new LoadFXML(this);
 
         loadFXML.loadFXML();
         loadFXML.initControllers();
 
-        loadFXML.getOrderScreenController().setRight(loadFXML.getReceiptPreview());
+        loadFXML.getOrderScreenController().setLeft(loadFXML.getReceiptPreview());
         loadFXML.getOrderScreenController().setRight(loadFXML.getOrderScreen1());
         loadFXML.getEndCheckoutScreenController().setReceiptPreview(loadFXML.getReceiptPreview());
 
@@ -129,5 +133,17 @@ public class App extends Application {
 
     public void setCurrentItem(ItemView currentItem) {
         this.currentItem = currentItem;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn.get();
+    }
+
+    public SimpleBooleanProperty loggedInProperty() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn.set(loggedIn);
     }
 }

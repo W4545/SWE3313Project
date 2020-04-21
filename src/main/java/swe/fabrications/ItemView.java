@@ -12,6 +12,7 @@ public class ItemView extends Label implements Food {
     public ItemView(String item, double price) {
         this.price = new SimpleDoubleProperty(price);
         this.item = new SimpleStringProperty(item);
+        setWrapText(true);
         textProperty().bind(Bindings.format("$%.2f %s", this.price, this.item));
     }
 

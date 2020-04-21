@@ -30,6 +30,7 @@ public class LoginController {
 		String password = passwordField.getText();
 		clear();
 		if (username.equals("cashier") && password.equals("password")) {
+			app.loggedInProperty().set(true);
 			app.getViews().getRootController().setCenter(app.getViews().getNewCustomer());
 		}
 	}

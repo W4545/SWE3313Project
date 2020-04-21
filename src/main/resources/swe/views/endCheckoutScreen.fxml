@@ -16,6 +16,6 @@
    <children>
       <Label text="Receipt" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
       <Button fx:id="receiptButton" mnemonicParsing="false" text="Print Receipt" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Button fx:id="exitButton" mnemonicParsing="false" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button fx:id="exitButton" mnemonicParsing="false" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" onAction="#exitButton"/>
    </children>
 </GridPane>

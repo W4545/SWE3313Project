@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -13,6 +10,8 @@
     <top>
         <MenuBar fx:id="menuBar">
             <Menu text="Mode">
+                <MenuItem text="New Order" onAction="#newOrder" fx:id="newOrder"/>
+                <MenuItem text="Logout" onAction="#logout" fx:id="logOut"/>
                 <MenuItem text="Exit" fx:id="exitItem" onAction="#exit"/>
             </Menu>
             <Menu text="Help">

@@ -4,6 +4,7 @@ package swe.controllers;
 // Date: 4/11/2020
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import swe.fabrications.Person;
 import swe.launch.App;
@@ -32,6 +33,11 @@ public class NewCustomerController {
 
 	@FXML
 	private void newCustomerButton() {
+		if (customerPhoneNumber.getText().isBlank() || customerName.getText().isBlank() ||
+			customerAddress.getText().isBlank() || customerPaymentMethod.getText().isBlank()) {
+			new Alert(Alert.AlertType.ERROR, "Please fill in all boxes").show();
+			return;
+		}
 		Person person = new Person(customerPhoneNumber.getText(), customerName.getText(),
 				customerAddress.getText(), customerPaymentMethod.getText());
 		app.getCustomers().add(person);

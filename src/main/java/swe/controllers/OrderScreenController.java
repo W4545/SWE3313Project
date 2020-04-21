@@ -24,10 +24,19 @@ public class OrderScreenController implements Initializable {
 		this.app = app;
 	}
 
+	public void setLeft(Parent parent) {
+		if (splitPane.getItems().size() == 2)
+			splitPane.getItems().set(0, parent);
+		else
+			splitPane.getItems().add(0, parent);
+		splitPane.setDividerPositions(.25);
+	}
+
 	public void setRight(Parent parent) {
-		if (splitPane.getItems().size() > 1)
-			splitPane.getItems().remove(1);
-		splitPane.getItems().add(parent);
+		if (splitPane.getItems().size() == 2)
+			splitPane.getItems().set(1, parent);
+		else
+			splitPane.getItems().add(1, parent);
 		splitPane.setDividerPositions(.25);
 	}
 

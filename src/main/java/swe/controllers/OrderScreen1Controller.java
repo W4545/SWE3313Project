@@ -140,12 +140,16 @@ public class OrderScreen1Controller implements Initializable {
 	private Pair<String, Double> getDrinkOrder() {
 		String order = ((RadioButton) drinkToggleGroup.getSelectedToggle()).getText();
 		double price;
-		if (smallCheckBox.isSelected())
+		if (smallCheckBox.isSelected()) {
 			price = 1.00;
-		else if (mediumCheckBox.isSelected())
+			order = "Small " + order;
+		} else if (mediumCheckBox.isSelected()) {
 			price = 1.50;
-		else
+			order = "Medium " + order;
+		} else {
 			price = 2.00;
+			order = "Large " + order;
+		}
 		return new Pair<>(order, price);
 	}
 

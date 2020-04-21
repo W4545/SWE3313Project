@@ -40,6 +40,11 @@ public class ExistingCustomerController {
 		}
 	}
 
+	public void clear() {
+		searchField.clear();
+		table.setItems(null);
+	}
+
 	public void setApp(App app) {
 		this.app = app;
 	}
