@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import java.lang.Boolean?>
 <GridPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swe.controllers.OrderScreen1Controller">
    <fx:define>
       <ToggleGroup fx:id="crustToggleGroup" />
@@ -58,7 +57,7 @@
             <CheckBox mnemonicParsing="false" text="S Fountain Drink ($1.00)" onAction="#small" fx:id="smallCheckBox"/>
             <CheckBox mnemonicParsing="false" text="M Fountain Drink ($1.50)" onAction="#medium" fx:id="mediumCheckBox"/>
             <CheckBox mnemonicParsing="false" text="L Fountain Drink ($2.00)" onAction="#large" fx:id="largeCheckBox"/>
-            <CheckBox mnemonicParsing="false" text="Cookie ($2.00)" />
+            <CheckBox mnemonicParsing="false" text="Cookie ($2.00)" fx:id="cookieCheckBox" onAction="#cookie"/>
          </children>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="drinkBox">

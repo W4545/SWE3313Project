@@ -16,23 +16,23 @@
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
             <Label text="Meats ($0.20 each)" />
-            <CheckBox mnemonicParsing="false" text="Pepperoni" />
-            <CheckBox mnemonicParsing="false" text="Sausage" />
-            <CheckBox mnemonicParsing="false" text="Beef" />
-            <CheckBox mnemonicParsing="false" text="Chicken" />
-            <CheckBox mnemonicParsing="false" text="Bacon" />
-            <CheckBox mnemonicParsing="false" text="Salami" />
+            <CheckBox mnemonicParsing="false" text="Pepperoni" onAction="#checked" fx:id="pepperoni"/>
+            <CheckBox mnemonicParsing="false" text="Sausage" onAction="#checked" fx:id="sausage"/>
+            <CheckBox mnemonicParsing="false" text="Beef" onAction="#checked" fx:id="beef"/>
+            <CheckBox mnemonicParsing="false" text="Chicken" onAction="#checked" fx:id="chicken"/>
+            <CheckBox mnemonicParsing="false" text="Bacon" onAction="#checked" fx:id="bacon"/>
+            <CheckBox mnemonicParsing="false" text="Salami" onAction="#checked" fx:id="salami"/>
          </children>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
          <children>
             <Label text="Veggies ($0.20 each)" />
-            <CheckBox mnemonicParsing="false" text="Onions" />
-            <CheckBox mnemonicParsing="false" text="Peppers" />
-            <CheckBox mnemonicParsing="false" text="Mushrooms" />
-            <CheckBox mnemonicParsing="false" text="Olives" />
-            <CheckBox mnemonicParsing="false" text="Spinach" />
-            <CheckBox mnemonicParsing="false" text="Banana Peppers" />
+            <CheckBox mnemonicParsing="false" text="Onions" onAction="#checked" fx:id="onions"/>
+            <CheckBox mnemonicParsing="false" text="Peppers" onAction="#checked" fx:id="peppers"/>
+            <CheckBox mnemonicParsing="false" text="Mushrooms" onAction="#checked" fx:id="mushrooms"/>
+            <CheckBox mnemonicParsing="false" text="Olives" onAction="#checked" fx:id="olives"/>
+            <CheckBox mnemonicParsing="false" text="Spinach" onAction="#checked" fx:id="spinach"/>
+            <CheckBox mnemonicParsing="false" text="Banana Peppers" onAction="#checked" fx:id="bananaPeppers"/>
          </children>
       </VBox>
       <Button mnemonicParsing="false" onAction="#backButton" text="Back" GridPane.rowIndex="1" />

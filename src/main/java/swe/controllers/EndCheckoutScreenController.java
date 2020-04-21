@@ -29,7 +29,7 @@ public class EndCheckoutScreenController implements Initializable {
     }
 
     public void setReceiptPreview(Parent parent) {
-        gridPane.add(parent, 0, 0, 2, 1);
+        gridPane.add(parent, 0, 1, 2, 1);
     }
 
     @Override

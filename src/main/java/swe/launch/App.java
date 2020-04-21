@@ -6,7 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import swe.fabrications.ItemView;
 import swe.fabrications.Person;
+import swe.fabrications.PizzaView;
 
 import java.io.*;
 import java.util.Scanner;
@@ -16,11 +18,17 @@ public class App extends Application {
     private LoadFXML loadFXML;
 
     private ObservableList<Person> customers;
+    private Stage primaryStage;
+
+    private PizzaView currentPizza;
+    private ItemView currentItem;
 
     public static final boolean DEV_MODE = true;
+    public static final double TAX = .06;
 
     @Override
     public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
         loadCustomers();
         loadFXML = new LoadFXML(this);
 
@@ -101,5 +109,25 @@ public class App extends Application {
 
     public ObservableList<Person> getCustomers() {
         return customers;
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public PizzaView getCurrentPizza() {
+        return currentPizza;
+    }
+
+    public void setCurrentPizza(PizzaView currentPizza) {
+        this.currentPizza = currentPizza;
+    }
+
+    public ItemView getCurrentItem() {
+        return currentItem;
+    }
+
+    public void setCurrentItem(ItemView currentItem) {
+        this.currentItem = currentItem;
     }
 }

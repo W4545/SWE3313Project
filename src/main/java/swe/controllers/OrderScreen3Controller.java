@@ -29,6 +29,30 @@ public class OrderScreen3Controller implements Initializable {
         app.getViews().getRootController().setCenter(app.getViews().getEndCheckoutScreen());
     }
 
+    @FXML
+    private void addItem() {
+        app.setCurrentItem(null);
+        app.setCurrentPizza(null);
+        app.getViews().getOrderScreen1Controller().clear();
+        app.getViews().getOrderScreen2Controller().clear();
+        app.getViews().getOrderScreenController().setRight(app.getViews().getOrderScreen1());
+    }
+
+    @FXML
+    private void editItem() {
+        app.getViews().getOrderScreenController().setRight(app.getViews().getOrderScreen1());
+    }
+
+    @FXML
+    private void removeItem() {
+        app.getViews().getReceiptPreviewController().getVBox().getChildren().remove(app.getCurrentItem());
+        app.getViews().getReceiptPreviewController().getVBox().getChildren().remove(app.getCurrentPizza());
+        app.getViews().getOrderScreen1Controller().clear();
+        app.getViews().getOrderScreen2Controller().clear();
+        app.setCurrentPizza(null);
+        app.setCurrentItem(null);
+        app.getViews().getReceiptPreviewController().update();
+    }
 
     public void setApp(App app) {
         this.app = app;

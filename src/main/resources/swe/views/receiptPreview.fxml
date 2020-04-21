@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -11,11 +12,19 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label alignment="TOP_LEFT" text="Order(s):" fx:id="orderTitle"/>
+      <Label fx:id="orderTitle" alignment="TOP_LEFT" text="Order(s):" />
       <VBox fx:id="vBox" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
       </VBox>
-      <Label fx:id="total" text="Total: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label fx:id="tax" text="Tax: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="total" text="Total: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin></Label>
    </children>
 </GridPane>
